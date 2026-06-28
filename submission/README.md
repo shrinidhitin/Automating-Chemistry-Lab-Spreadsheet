@@ -15,13 +15,13 @@ Install the required dependency:
 pip install -r requirements.txt
 ```
 
-Running the program:
+Installing and using the program:
 1. Clone repo
 ```bash
 git clone https://github.com/shrinidhitin/Automating-Chemistry-Lab-Spreadsheet.git
 cd Automating-Chemistry-Lab-Spreadsheet
 ```
-2. Running.. 
+2. Running
 - Option A: The executable
 ```bash
 ./dist/chem_lab
