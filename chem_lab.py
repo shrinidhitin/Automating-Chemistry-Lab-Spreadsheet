@@ -27,25 +27,9 @@ class LinearRegression:
 
     def line_equation(self):
         return self.m, self.b
-    
 
-st.title("Chemistry Lab Data Analysis")
-st.text('This app processes chemistry lab data from an single specific Excel file and performs linear regression analysis.')
-
-uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx"])
-
-if uploaded_file is None:
-    st.info("Please upload the file: Chem Lab Data - Copy.xlsx")
-    st.stop()
-
-if uploaded_file.name != 'Chem Lab Data - Copy.xlsx':
-        st.error("Wrong file. Please upload 'Chem Lab Data - Copy.xlsx'")
-        st.stop()
-
-wb = xl.load_workbook(uploaded_file)
+wb = xl.load_workbook('Chem Lab Data - Copy.xlsx')
 sheet = wb['Sheet1']
-
-#constants
 output1_row = 16
 output2_row = 25
 current = 0.5
@@ -101,14 +85,4 @@ sheet["O7"] = b_uncertainty
 m, b = lr.line_equation()
 sheet["L8"] = f"{m}x + {b}"
 
-output = io.BytesIO()
-wb.save(output)
-output.seek(0)
-
-st.success("Analysis complete")
-
-st.download_button(
-    "Download updated Excel file",
-    data=output,
-    file_name="Chem Lab Data - Copy2.xlsx"
-)
+wb.save('Chem Lab Data - Copy2.xlsx')
