@@ -1,6 +1,4 @@
-import streamlit as st # to run the app -> python3 -m streamlit run streamlit_app.py
 import openpyxl as xl
-import io
 
 class LinearRegression:
     def __init__(self, x, y):
