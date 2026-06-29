@@ -8,28 +8,30 @@ The original .xlsx file gives the raw data from a lab where the mass of copper d
 - Linear regression (slope and intercept)
 - Uncertainty in slope and intercept
 
-Requirements are Python 3.9 or later, and openpyxl
-Install the required dependency:
-
-```bash
-pip install -r requirements.txt
-```
 
 Installing and using the program:
-1. Clone repo
+1. Download the program chem_lab for Mac or chem_lab.exe for Windows
+2. Download `Chem Lab Data - Copy.xlsx` 
+3. Open the directory with the downloaded items,
 ```bash
-git clone https://github.com/shrinidhitin/Automating-Chemistry-Lab-Spreadsheet.git
-cd Automating-Chemistry-Lab-Spreadsheet
+cd Downloads
 ```
-2. Running
-- Option A: The executable
+The input file is "Chem Lab Data - Copy.xlsx". Ensure that the file and the downloaded program are in the same folder
+check with
 ```bash
-./dist/chem_lab
+ls
 ```
-- Option B: The Python script
+4. Running the executable
+for Mac:
 ```bash
-python3 chem_lab.py
+chmod +x chem_lab
+./chem_lab "Chem Lab Data - Copy.xlsx" output.xlsx
 ```
+for Windows:
+```bash
+.\chem_lab.exe "Chem Lab Data - Copy.xlsx" output.xlsx
+```
+
 The program will read `Chem Lab Data - Copy.xlsx` and generate a new workbook. The output Excel file will contain the processed experimental data, as well as calculating and comparing the collected data with the theoretical values. All the data is also linearised and graphed with uncertainty for visual aid.
 
 The output gives a secondary file 'Chem Lab Data - Copy2.xlsx' with the processed data and updated graphs.
